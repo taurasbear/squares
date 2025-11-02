@@ -1,6 +1,6 @@
 using Squares.Domain.Entities;
 
-namespace Squares.Application.Interfaces;
+namespace Squares.Application.Interfaces.Data;
 
 public interface IRepository
 {

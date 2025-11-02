@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Squares.Application.Common.Exceptions;
-using Squares.Application.Interfaces;
+using Squares.Application.Interfaces.Data;
 using Squares.Domain.Entities;
 
 namespace Squares.Infrastructure.Data;

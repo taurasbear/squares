@@ -1,6 +1,6 @@
 using AutoMapper;
 using MediatR;
-using Squares.Application.Interfaces;
+using Squares.Application.Interfaces.Data;
 using Squares.Domain.Entities;
 
 namespace Squares.Application.Features.PointSetFeatures.CreatePointSet;

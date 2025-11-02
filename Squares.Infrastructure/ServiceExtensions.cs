@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Squares.Application.Interfaces;
+using Squares.Application.Interfaces.Data;
 using Squares.Infrastructure.Data;
 
 namespace Squares.Infrastructure;
