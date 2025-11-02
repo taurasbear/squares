@@ -12,7 +12,7 @@
             "sourceFileMap": {
                 "/app": "${workspaceFolder}"
             },
-            "processName": "OrderManagement.Server"
+            "processName": "Squares.Server"
         },
     ]
 }
