@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Squares.Application.Interfaces;
 using Squares.Infrastructure.Data;
 
 namespace Squares.Infrastructure;
@@ -13,5 +14,7 @@ public static class ServiceExtensions
                 .UseLazyLoadingProxies()
                 .UseNpgsql(connectionString)
         );
+
+        services.AddScoped<IRepository, Repository>();
     }
 }
