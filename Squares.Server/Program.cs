@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Squares.Application;
 using Squares.Infrastructure;
 using Squares.Infrastructure.Data;
+using Squares.Server.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +10,11 @@ var connectionString = builder.Configuration.GetConnectionString("Development");
 builder.Services.ConfigureInfrastructure(connectionString);
 builder.Services.ConfigureApplication();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(opt =>
+{
+    opt.Filters.Add<NotFoundExceptionFilter>();
+    opt.Filters.Add<ValidationExceptionFilter>();
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
