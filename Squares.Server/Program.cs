@@ -1,9 +1,11 @@
+using Squares.Application;
 using Squares.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("Development");
 builder.Services.ConfigureInfrastructure(connectionString);
+builder.Services.ConfigureApplication();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
