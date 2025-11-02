@@ -1,5 +1,7 @@
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
+using Squares.Application.Interfaces.Services;
+using Squares.Application.Services;
 
 namespace Squares.Application;
 
@@ -13,5 +15,6 @@ public static class ServiceExtensions
         });
 
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
+        services.AddScoped<ISquareService, SquareService>();
     }
 }
