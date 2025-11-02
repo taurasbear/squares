@@ -11,5 +11,7 @@ public static class ServiceExtensions
         {
             cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
         });
+
+        services.AddAutoMapper(Assembly.GetExecutingAssembly());
     }
 }
