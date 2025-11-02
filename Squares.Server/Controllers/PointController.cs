@@ -15,7 +15,7 @@ public class PointController(IMediator mediator) : BaseController
     }
 
     [HttpDelete]
-    public async Task<IActionResult> Delete([FromBody] DeletePointCommand command, CancellationToken cancellationToken)
+    public async Task<IActionResult> Delete([FromQuery] DeletePointCommand command, CancellationToken cancellationToken)
     {
         await mediator.Send(command, cancellationToken);
         return NoContent();
