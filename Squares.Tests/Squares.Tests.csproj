@@ -4,9 +4,16 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
       <PackageReference Include="FluentAssertions" Version="8.8.0" />
       <PackageReference Include="NSubstitute" Version="5.3.0" />
       <PackageReference Include="NSubstitute.Analyzers.CSharp" Version="1.0.17">
@@ -14,6 +21,22 @@
         <PrivateAssets>all</PrivateAssets>
       </PackageReference>
       <PackageReference Include="xunit" Version="2.9.3" />
+      <PackageReference Include="xunit.runner.visualstudio" Version="3.0.2">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.10" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.10" />
     </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Squares.Infrastructure\Squares.Infrastructure.csproj" />
+    <ProjectReference Include="..\Squares.Application\Squares.Application.csproj" />
+    <ProjectReference Include="..\Squares.Domain\Squares.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
 
 </Project>
