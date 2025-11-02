@@ -1,5 +1,6 @@
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
+using Squares.Application.Common.Behaviors;
 using Squares.Application.Interfaces.Services;
 using Squares.Application.Services;
 
@@ -12,6 +13,7 @@ public static class ServiceExtensions
         services.AddMediatR(cfg =>
         {
             cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+            cfg.AddBehavior(typeof(ValidationBehavior<,>));
         });
 
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
