@@ -47,7 +47,7 @@ docker compose up -d
 
 ## Final thoughts
 
-- Spent around 6 hours in total working on this project
+- Spent around 5 hours in total working on this project
 - Prioritised functionality (KISS)
 - Had lots of fun :3
 
