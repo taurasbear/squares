@@ -1,4 +1,5 @@
 using System.Reflection;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using Squares.Application.Common.Behaviors;
 using Squares.Application.Interfaces.Services;
@@ -15,6 +16,7 @@ public static class ServiceExtensions
             cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
             cfg.AddOpenBehavior(typeof(ValidationBehavior<,>));
         });
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
         services.AddScoped<ISquareService, SquareService>();
