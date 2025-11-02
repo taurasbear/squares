@@ -1,5 +1,7 @@
+using Microsoft.EntityFrameworkCore;
 using Squares.Application;
 using Squares.Infrastructure;
+using Squares.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +19,12 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var squaresContext = scope.ServiceProvider.GetRequiredService<SquaresContext>();
+    await squaresContext.Database.MigrateAsync();
 }
 
 app.UseHttpsRedirection();
