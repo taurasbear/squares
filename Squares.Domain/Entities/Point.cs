@@ -6,5 +6,7 @@ public class Point : BaseEntity
 
     public int Y { get; set; }
 
+    public Guid PointSetId { get; set; }
+
     public virtual PointSet PointSet { get; set; } = null!;
 }
